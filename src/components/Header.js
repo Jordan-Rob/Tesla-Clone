@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components'
 import MenuIcon from '@material-ui/icons/Menu';
+import CloseIcon from '@material-ui/icons/Close';
 
 const Header = () => {
+
+    const [ sideBarStatus, setSideBarStatus] = useState(false);
 
     return(
         <Container>
@@ -20,9 +23,12 @@ const Header = () => {
             <RightMenu>
                 <a href='#'>Shop</a>
                 <a href='#'>Tesla Account</a>
-                <CustomMenu />
+                <CustomMenu onClick= { ()=>setSideBarStatus(true) }/>
             </RightMenu>
-            <BurgerNav>
+            <BurgerNav show={sideBarStatus}>
+                <CloseWrap>
+                    <CustomClose onClick= { ()=>setSideBarStatus(false) }/>
+                </CloseWrap>
                 <li><a href="#">Existing Inventory</a></li>
                 <li><a href="#">Used Inventory</a></li>
                 <li><a href="#">Trade-In</a></li>
@@ -101,6 +107,8 @@ const BurgerNav = styled.div`
     display: flex;
     flex-direction: column;
     text-align: start;
+    transform: ${props => props.show? 'translateX(0)':'translateX(100%)'};
+    transition: transform 0.2s ease-in;
     li{
         padding: 10px;
         font-weight: 500;
@@ -111,4 +119,13 @@ const BurgerNav = styled.div`
         background: #F2F2F2;
         border-radius: 10px;
     }
+`
+
+const CustomClose = styled(CloseIcon)`
+    cursor: pointer;
+`
+
+const CloseWrap = styled.div`
+    display: flex;
+    justify-content: flex-end;
 `
