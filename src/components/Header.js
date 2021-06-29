@@ -4,6 +4,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import { selectCars } from '../features/car/carSlice'
 import { useSelector } from 'react-redux'
+import { Link, animateScroll as scroll } from "react-scroll";
 
 const Header = () => {
 
@@ -17,11 +18,68 @@ const Header = () => {
                 <img src='/images/logo.svg' alt='' />
             </a>
             <Menu>
-                { cars && cars.map((car, index)=> 
+                {/* cars && cars.map((car, index)=> 
                     <a key={index} href='#'>{car}</a>
-                ) }
-                <a href='#'>Solar Panels</a>
-                <a href='#'>Solar Roof</a>
+                ) */}
+                <Link 
+                activeClass="active" 
+                to="section1" 
+                spy={true}
+                smooth={true} 
+                offset={-70}
+                duration={500}>
+                    <a>Model S</a>
+                </Link>
+                
+                <Link 
+                activeClass="active" 
+                to="section2" 
+                spy={true}
+                smooth={true} 
+                offset={-70}
+                duration={500}>
+                    <a>Model Y</a>
+                </Link>
+                
+                <Link 
+                activeClass="active" 
+                to="section3" 
+                spy={true}
+                smooth={true} 
+                offset={-70}
+                duration={500}>
+                    <a>Model 3</a>
+                </Link>
+                
+                <Link 
+                activeClass="active" 
+                to="section4" 
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}>
+                    <a>Model X</a>
+                </Link>
+                
+                <Link 
+                activeClass="active" 
+                to="section5" 
+                spy={true}
+                smooth={true} 
+                offset={-70}
+                duration={500}>
+                    <a>Solar Panels</a>
+                </Link>
+                
+                <Link 
+                activeClass="active" 
+                to="section6" 
+                spy={true}
+                smooth={true} 
+                offset={-70}
+                duration={500}>
+                    Solar Roof
+                </Link>
             </Menu>
             <RightMenu>
                 <a href='#'>Shop</a>

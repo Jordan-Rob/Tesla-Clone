@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
 
-const Section = ({title, description, backgroundImg, leftBtnText, rightBtnText}) => {
+const Section = ({title, description, backgroundImg, leftBtnText, rightBtnText, id}) => {
     return(
-        <Wrap bgImg={backgroundImg}>
+        <Wrap bgImg={backgroundImg} id={id}>
             <Fade bottom>
                 <ItemText>
                     <h1>{title}</h1>
@@ -32,7 +32,7 @@ const Section = ({title, description, backgroundImg, leftBtnText, rightBtnText})
 
 const Wrap = styled.div`
     width:100vw;
-    height:100vh;
+    height:100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
