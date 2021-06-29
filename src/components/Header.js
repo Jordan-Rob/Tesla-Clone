@@ -2,10 +2,14 @@ import React, { useState } from 'react';
 import styled from 'styled-components'
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
+import { selectCars } from '../features/car/carSlice'
+import { useSelector } from 'react-redux'
 
 const Header = () => {
 
     const [ sideBarStatus, setSideBarStatus] = useState(false);
+    const cars  = useSelector(selectCars)
+    console.log(cars)
 
     return(
         <Container>
@@ -13,10 +17,9 @@ const Header = () => {
                 <img src='/images/logo.svg' alt='' />
             </a>
             <Menu>
-                <a href='#'>Model S</a>
-                <a href='#'>Model 3</a>
-                <a href='#'>Model X</a>
-                <a href='#'>Model Y</a>
+                { cars && cars.map((car, index)=> 
+                    <a key={index} href='#'>{car}</a>
+                ) }
                 <a href='#'>Solar Panels</a>
                 <a href='#'>Solar Roof</a>
             </Menu>
@@ -58,6 +61,8 @@ const Container = styled.div`
     top: 0;
     left: 0;
     right: 0;
+    z-index: 1;
+
 `
 
 const Menu = styled.div`
