@@ -4,7 +4,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import { selectCars } from '../features/car/carSlice'
 import { useSelector } from 'react-redux'
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 
 const Header = () => {
 
@@ -14,7 +14,7 @@ const Header = () => {
 
     return(
         <Container>
-            <a>
+            <a href="#">
                 <img src='/images/logo.svg' alt='' />
             </a>
             <Menu>
@@ -28,7 +28,7 @@ const Header = () => {
                 smooth={true} 
                 offset={0}
                 duration={1000}>
-                    <a>Model S</a>
+                    Model S
                 </Link>
                 
                 <Link 
@@ -38,7 +38,7 @@ const Header = () => {
                 smooth={true} 
                 offset={0}
                 duration={1000}>
-                    <a>Model Y</a>
+                    Model Y
                 </Link>
                 
                 <Link 
@@ -48,7 +48,7 @@ const Header = () => {
                 smooth={true} 
                 offset={0}
                 duration={1000}>
-                    <a>Model 3</a>
+                    Model 3
                 </Link>
                 
                 <Link 
@@ -58,7 +58,7 @@ const Header = () => {
                 smooth={true}
                 offset={0}
                 duration={1000}>
-                    <a>Model X</a>
+                    Model X
                 </Link>
                 
                 <Link 
@@ -68,7 +68,7 @@ const Header = () => {
                 smooth={true} 
                 offset={0}
                 duration={1000}>
-                    <a>Solar Panels</a>
+                    Solar Panels
                 </Link>
                 
                 <Link 
@@ -90,18 +90,18 @@ const Header = () => {
                 <CloseWrap>
                     <CustomClose onClick= { ()=>setSideBarStatus(false) }/>
                 </CloseWrap>
-                <li><a href="#">Existing Inventory</a></li>
-                <li><a href="#">Used Inventory</a></li>
-                <li><a href="#">Trade-In</a></li>
-                <li><a href="#">CyberTruck</a></li>
-                <li><a href="#">Roadster</a></li>
-                <li><a href="#">Semi</a></li>
-                <li><a href="#">Charging</a></li>
-                <li><a href="#">Powerwall</a></li>
-                <li><a href="#">Commercial Energy</a></li>
-                <li><a href="#">Utilities</a></li>
-                <li><a href="#">Find Us</a></li>
-                <li><a href="#">Support</a></li>
+                <li>Existing Inventory</li>
+                <li>Used Inventory</li>
+                <li>Trade-In</li>
+                <li>CyberTruck</li>
+                <li>Roadster</li>
+                <li>Semi</li>
+                <li>Charging</li>
+                <li>Powerwall</li>
+                <li>Commercial Energy</li>
+                <li>Utilities</li>
+                <li>Find Us</li>
+                <li>Support</li>
             </BurgerNav>
         </Container>
     )
@@ -178,6 +178,7 @@ const BurgerNav = styled.div`
         padding: 10px;
         font-weight: 500;
         margin: 12px 0px;
+        cursor: pointer;
     }
 
     li:hover{
