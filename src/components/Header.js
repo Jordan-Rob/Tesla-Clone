@@ -14,7 +14,7 @@ const Header = () => {
 
     return(
         <Container>
-            <a href="#">
+            <a href="#section1">
                 <img src='/images/logo.svg' alt='' />
             </a>
             <Menu>
@@ -82,8 +82,8 @@ const Header = () => {
                 </Link>
             </Menu>
             <RightMenu>
-                <a href='#'>Shop</a>
-                <a href='#'>Tesla Account</a>
+                <a href='#shop'>Shop</a>
+                <a href='#account'>Tesla Account</a>
                 <CustomMenu onClick= { ()=>setSideBarStatus(true) }/>
             </RightMenu>
             <BurgerNav show={sideBarStatus}>
