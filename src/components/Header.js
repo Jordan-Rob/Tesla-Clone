@@ -26,8 +26,8 @@ const Header = () => {
                 to="section1" 
                 spy={true}
                 smooth={true} 
-                offset={-70}
-                duration={500}>
+                offset={0}
+                duration={1000}>
                     <a>Model S</a>
                 </Link>
                 
@@ -36,8 +36,8 @@ const Header = () => {
                 to="section2" 
                 spy={true}
                 smooth={true} 
-                offset={-70}
-                duration={500}>
+                offset={0}
+                duration={1000}>
                     <a>Model Y</a>
                 </Link>
                 
@@ -46,8 +46,8 @@ const Header = () => {
                 to="section3" 
                 spy={true}
                 smooth={true} 
-                offset={-70}
-                duration={500}>
+                offset={0}
+                duration={1000}>
                     <a>Model 3</a>
                 </Link>
                 
@@ -56,8 +56,8 @@ const Header = () => {
                 to="section4" 
                 spy={true}
                 smooth={true}
-                offset={-70}
-                duration={500}>
+                offset={0}
+                duration={1000}>
                     <a>Model X</a>
                 </Link>
                 
@@ -66,8 +66,8 @@ const Header = () => {
                 to="section5" 
                 spy={true}
                 smooth={true} 
-                offset={-70}
-                duration={500}>
+                offset={0}
+                duration={1000}>
                     <a>Solar Panels</a>
                 </Link>
                 
@@ -76,8 +76,8 @@ const Header = () => {
                 to="section6" 
                 spy={true}
                 smooth={true} 
-                offset={-70}
-                duration={500}>
+                offset={0}
+                duration={1000}>
                     Solar Roof
                 </Link>
             </Menu>
@@ -134,11 +134,13 @@ const Menu = styled.div`
         text-transform: uppercase;
         padding: 0 10px;
         flex-wrap: nowrap;
+        cursor: pointer;
     }
 
     @media(max-width: 768px){
         display: none;
     }
+
 
 `
 
